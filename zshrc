@@ -1,31 +1,53 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 #echo -e "\033]50;SetProfile=Presentation\a"
-echo -e "\033]50;SetProfile=Cobalt2\a"
+echo -e "\033]50;SetProfile=Clovis\a"
 # Path to your oh-my-zsh installation.
-export PATH="$HOME/Library/Haskell/bin:$PATH"
+export PATH="$HOME/bin:$HOME/Library/Haskell/bin:$HOME/.local/bin:$PATH"
 export ZSH=/Users/Nithin/.oh-my-zsh
+alias dcj="$HOME/bin/dcj/dcj.sh"
 #POWERLEVEL9K_MODE='awesome-fontconfig'
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 #ZSH_THEME=bullet-train
-ZSH_THEME=bira
+#ZSH_THEME=bira
 
-#ZSH_THEME="powerlevel9k/powerlevel9k"
-#POWERLEVEL9K_LEFT_PROMPT_ELEMENTS = (context dir rbenv vcs)
-#POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS = (status root_indicator background_jobs history time)
+ZSH_THEME="powerlevel9k/powerlevel9k"
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir vcs)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs history time)
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 #POWERLEVEL9K_COLOR_SCHEME='light'
+POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
+POWERLEVEL9K_PROMPT_ON_NEWLINE=true
+POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX="%f"
+POWERLEVEL9K_ANACONDA_LEFT_DELIMITER="("
+POWERLEVEL9K_ANACONDA_RIGHT_DELIMITER=")"
+
+
+#POWERLEVEL9K_MULTILINE_SECOND_PROMPT_PREFIX="$"
+# Visual customisation of the second prompt line
+local user_symbol="$"
+#if [[ $(print -P "%#") =~ "#" ]]; then
+#    user_symbol = "#"
+#fi
+#
+#POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="$"
+POWERLEVEL9K_MULTILINE_SECOND_PROMPT_PREFIX="%{%B%F{black}%K{yellow}%} $user_symbol%{%b%f%k%F{yellow}%} %{%f%}"
+POWERLEVEL9K_PROMPT_ON_NEWLINE=true
+#POWERLEVEL9K_VCS_MODIFIED_BACKGROUND=’red’
 DEFAULT_USER='Nithin'
-POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
+#POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
 # Uncomment the following line to use hyphen-insensitive completion. Case
 # sensitive completion must be off. _ and - will be interchangeable.
 # HYPHEN_INSENSITIVE="true"
 
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+
 # Uncomment the following line to disable bi-weekly auto-update checks.
-# DISABLE_AUTO_UPDATE="true"
+#DISABLE_AUTO_UPDATE="true"
 
 # Uncomment the following line to change how often to auto-update (in days).
 # export UPDATE_ZSH_DAYS=13
@@ -93,7 +115,11 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 export PATH="/usr/local/opt/sqlite/bin:$PATH"
-export PATH="/Users/Nithin/anaconda/bin:$PATH"
+# export PATH="/Users/Nithin/anaconda/bin:$PATH"  # commented out by conda initialize
 export HOMEBREW_NO_AUTO_UPDATE=true
 export HOMEBREW_NO_AUTO_UPDATE=true
 export HOMEBREW_NO_AUTO_UPDATE=true
+
+
+alias connect='ssh -XY nsethumadhavan@amam1w322'
+
